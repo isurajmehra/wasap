@@ -1,0 +1,13 @@
+{
+    "name": "masroni20/wasap",
+    "description": "Tools sederhana untuk membuat tautan link WhatsApp dengan mudah",
+    "type": "project",
+    "license": "GPL",
+    "authors": [
+            {
+                "name": "Mas Roni",
+                "email": "roniblogspot58@gmail.com"
+            }
+        ],
+    "require": {}
+}
