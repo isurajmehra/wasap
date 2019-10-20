@@ -94,31 +94,17 @@ if (isset($_POST['tombol'])) {
 
           <label for="basic-url">Link Whatsapp</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" id="normal_link" id="number" value="<?php echo $link; ?>">
+            <input type="text" class="form-control" id="linkwa" value="<?php echo $link; ?>">
             <div class="input-group-append">
-              <a class="btn btn-primary" href="javascript:document.getElementById('normal_link').select();document.execCommand('copy');document.getElementById('normal_link').blur();
-              Swal.fire({
-                position: 'center',
-                type: 'success',
-                title: 'Link whatsapp berhasil di copy',
-                showConfirmButton: false,
-                timer: 1500
-              })">Copy !</a>
+              <button class="btn btn-primary" onclick="copyLinkwa()">Copy!</button>
             </div>
           </div>
 
           <label for="basic-url">Link TinyUrl</label>
           <div class="input-group mb-3">
-            <input type="text" class="form-control" id="shortlink" id="number" value="<?php echo $shortlink; ?>">
+            <input type="text" class="form-control" id="shortlink" value="<?php echo $shortlink; ?>">
             <div class="input-group-append">
-              <a class="btn btn-primary" href="javascript:document.getElementById('shortlink').select();document.execCommand('copy');document.getElementById('shortlink').blur();
-              Swal.fire({
-                position: 'center',
-                type: 'success',
-                title: 'Link TinyUrl berhasil di copy',
-                showConfirmButton: false,
-                timer: 1500
-              })">Copy !</a>
+              <button class="btn btn-primary" onclick="copyShortlink()">Copy!</button>
             </div>
           </div>
 
@@ -205,6 +191,44 @@ if (isset($_POST['tombol'])) {
       hideIcons: ["guide", "heading", "quote", "link", "image", "unordered-list", "ordered-list", "preview", "fullscreen", "side-by-side"],
       element: document.getElementById("message"),
     });
+  </script>
+
+  <script>
+    function copyLinkwa() {
+      /* Get the text field */
+      var copyText = document.getElementById("linkwa");
+
+      /* Select the text field */
+      copyText.select();
+      copyText.setSelectionRange(0, 99999); /*For mobile devices*/
+
+      /* Copy the text inside the text field */
+      document.execCommand("copy");
+
+      /* Alert the copied text */
+      Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'Link whatsapp berhasil di copy!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    } 
+  </script>
+  <script>
+    function copyShortlink() {
+      var copyText = document.getElementById("shortlink");
+      copyText.select();
+      copyText.setSelectionRange(0, 99999);
+      document.execCommand("copy");
+      Swal.fire({
+        position: 'center',
+        type: 'success',
+        title: 'Link TinyUrl berhasil di copy!',
+        showConfirmButton: false,
+        timer: 1500
+      });
+    } 
   </script>
 
 </body>
